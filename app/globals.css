@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #F7F8FC;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #F1F4FA;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-subtle: rgba(15, 23, 42, 0.08);
+    --accent-primary: #6366F1;
+    --accent-secondary: #22D3EE;
+    --accent-gold: #F5B942;
+  }
+
+  .dark {
+    --bg-canvas: #0B1020;
+    --bg-surface: #121A33;
+    --bg-surface-elevated: #172140;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: var(--font-tajawal), var(--font-jakarta), system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-cairo), var(--font-jakarta), system-ui, sans-serif;
+  }
+
+  [dir="ltr"] body {
+    font-family: var(--font-jakarta), var(--font-tajawal), system-ui, sans-serif;
+  }
+
+  [dir="ltr"] h1, [dir="ltr"] h2, [dir="ltr"] h3, [dir="ltr"] h4 {
+    font-family: var(--font-jakarta), var(--font-cairo), system-ui, sans-serif;
+  }
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(20px, -24px, 0) scale(1.06);
+  }
+}
+
+@keyframes floatSlowReverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-22px, 18px, 0) scale(0.96);
+  }
+}
+
+.animate-blob-slow {
+  animation: floatSlow 16s ease-in-out infinite;
+}
+
+.animate-blob-reverse {
+  animation: floatSlowReverse 20s ease-in-out infinite;
+}
+
+.hero-dot-grid {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.16) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.dark .hero-dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-blob-slow,
+  .animate-blob-reverse,
+  .animate-pulse,
+  .animate-spin,
+  .animate-bounce {
+    animation: none !important;
+  }
+}

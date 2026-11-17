@@ -1,0 +1,6 @@
+{
+  "name": "مركز الأدوات | Tools Hub",
+  "description": "منصة عربية وإنجليزية شاملة تضم 21 أداة مجانية وسريعة تعمل بالكامل داخل المتصفح بخصوصية تامة: حاسبات مالية وصحية وتاريخية، أدوات صور وPDF، وأدوات نصوص.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
